@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "Hydro Flask Wide Mouth",
+    "capacity": "32oz",
+    "material": "Stainless Steel",
+    "insulated": true,
+    "supports_cold": true,
+    "supports_hot": true,
+    "lifespan": "10+ years",
+    "price": 39.95,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwbagYEm3IArWnUDev72GYc8jvIZAtq0N6Lw&s"
+  },
+  {
+    "id": 2,
+    "name": "Nalgene Tritan",
+    "capacity": "32oz",
+    "material": "BPA-Free Plastic",
+    "insulated": false,
+    "supports_cold": true,
+    "supports_hot": false,
+    "lifespan": "5-7 years",
+    "price": 14.99,
+    "image": "https://oceanbottle.co/cdn/shop/files/Ocean_Banner_Mob.png?v=1731370921"
+  },
+  {
+    "id": 3,
+    "name": "CamelBak Eddy+",
+    "capacity": "25oz",
+    "material": "BPA-Free Plastic",
+    "insulated": false,
+    "supports_cold": true,
+    "supports_hot": false,
+    "lifespan": "5-7 years",
+    "price": 16.99,
+    "image": "https://myborosil.com/cdn/shop/files/my-borosil-stainless-steel-bottles-trek-black-personalise-32329717710986.gif?v=1717398407"
+  },
+  {
+    "id": 4,
+    "name": "Contigo Autoseal Chill",
+    "capacity": "24oz",
+    "material": "Stainless Steel",
+    "insulated": true,
+    "supports_cold": true,
+    "supports_hot": true,
+    "lifespan": "8-10 years",
+    "price": 22.99,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwbagYEm3IArWnUDev72GYc8jvIZAtq0N6Lw&s"
+  },
+  {
+    "id": 5,
+    "name": "Takeya Actives",
+    "capacity": "40oz",
+    "material": "Stainless Steel",
+    "insulated": true,
+    "supports_cold": true,
+    "supports_hot": true,
+    "lifespan": "10+ years",
+    "price": 34.99,
+    "image": "https://oceanbottle.co/cdn/shop/files/Ocean_Banner_Mob.png?v=1731370921"
+  },
+  {
+    "id": 6,
+    "name": "Brita Filtering Water Bottle",
+    "capacity": "26oz",
+    "material": "BPA-Free Plastic",
+    "insulated": false,
+    "supports_cold": true,
+    "supports_hot": false,
+    "lifespan": "3-5 years",
+    "price": 19.99,
+    "image": "https://myborosil.com/cdn/shop/files/my-borosil-stainless-steel-bottles-trek-black-personalise-32329717710986.gif?v=1717398407"
+  },
+  {
+    "id": 7,
+    "name": "Iron Flask Sports",
+    "capacity": "32oz",
+    "material": "Stainless Steel",
+    "insulated": true,
+    "supports_cold": true,
+    "supports_hot": true,
+    "lifespan": "10+ years",
+    "price": 29.95,
+    "image": "https://img.freepik.com/free-photo/white-reusable-water-bottle_53876-145536.jpg"
+  }
+]
