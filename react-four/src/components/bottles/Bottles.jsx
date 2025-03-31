@@ -1,22 +1,53 @@
-import React, { use,useState } from 'react'
+import React, { use,useState,useEffect } from 'react'
 import Bottle from './Bottle';
 import './Bottles.css'
+import { addCart, getCart } from '../../utilities/localStorage';
 
 const Bottles = ({bottlesPromise}) => {
     
     const bottles = use(bottlesPromise);
-    console.log(bottles)
+    // console.log(bottles)
 
     const [cart, setCart] = useState([])
 
     const handleCart = (bottle)=>{
         const newCart = [...cart, bottle]
         setCart(newCart)
+
+        //save the bottle is in the storage 
+
+        addCart(bottle.id)
     }
-  return (
-    <div>Bottles : {bottles.length}
+
+    //useEffect
+
+    useEffect(() => {
+      const storedCartId = getCart();
+      // console.log(storedCartId,bottles)
+
+
+      const storedCart = []
+
+      for(const id of storedCartId){
+        // console.log(id)
+
+        const cartBottle = bottles.find(bottle => bottle.id === id)
+        if(cartBottle){
+          storedCart.push(cartBottle)
+        }
+      }
+
+      console.log("Stored Cart: ", storedCart)
+      setCart(storedCart)
+
+    }, [bottles])
     
+  return (
+    <div>
+      Bottles : {bottles.length}
+    <p>Cart {cart.length}</p>
     {cart.map((c)=> <li key={c.id}><img width={70} src={c.image}></img>  Name: {c.name}</li>)}
+    
     <div className='bottles-container'>
     {bottles.map((bottle)=> <Bottle key={bottle.id} bottle={bottle} handleCart={handleCart}/>)}
     </div>
