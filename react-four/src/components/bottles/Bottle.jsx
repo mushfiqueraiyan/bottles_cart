@@ -1,21 +1,20 @@
 import React from 'react'
 import './Bottles.css'
 
-const Bottle = ({bottle, handleCart}) => {
+const Bottle = ({bottle,handleCart}) => {
 
-    const {name,capacity,image} = bottle
-
-    const nameStyle = {
-        fontWeight: "700"
-    }
+  const {name,price,image} = bottle
+  // console.log(bottle)
+  
   return (
     <div className='card'>
+
+
     
-        <img width={200} src={image}></img> <br /> 
-        <b>Name</b>: {name} <br /> 
-        <b>Capacity</b> : {capacity} <br /> 
-    
-        <button onClick={()=> handleCart(bottle)}>Buy Now</button>
+      <img src={image} width={300} height={300} alt="" />
+      <h3>Name: {name}</h3>
+      <p>Price: {price}</p>
+      <button onClick={()=> handleCart(bottle)}>Buy Now</button>
     
     </div>
   )

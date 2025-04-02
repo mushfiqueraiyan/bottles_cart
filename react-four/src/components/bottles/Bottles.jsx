@@ -1,67 +1,46 @@
 import React, { use,useState,useEffect } from 'react'
-import Bottle from './Bottle';
 import './Bottles.css'
-import { addCart, getCart, removeCart } from '../../utilities/localStorage';
+import Bottle from './Bottle'
+import {getCart, removeCart, saveCart } from '../../utilities/localStorage'
+
 
 const Bottles = ({bottlesPromise}) => {
+
+  const [cart, setCart] = useState([])
     
-    const bottles = use(bottlesPromise);
-    // console.log(bottles)
 
-    const [cart, setCart] = useState([])
-
-    const handleCart = (bottle)=>{
-        const newCart = [...cart, bottle]
+    const handleCart = (bottle) =>{
+        const newCart = [...cart,bottle]
         setCart(newCart)
-
-        //save the bottle is in the storage 
-
-        addCart(bottle.id)
+        
     }
 
-    //useEffect
-
-    useEffect(() => {
-      const storedCartId = getCart();
-      // console.log(storedCartId,bottles)
-
-
-      const storedCart = []
-
-      for(const id of storedCartId){
-        // console.log(id)
-
-        const cartBottle = bottles.find(bottle => bottle.id === id)
-        if(cartBottle){
-          storedCart.push(cartBottle)
-        }
-      }
-
-      console.log("Stored Cart: ", storedCart)
-      setCart(storedCart)
-
-    }, [bottles])
-
-
-    const handleRemoveCart = (id)=>{
-      console.log("Remove item from the cart", id)
-
-      const remainingCart = cart.filter(bottle => bottle.id !== id)
+    const handleRemove = (id)=>{
+      const remainingCart = cart.filter((storedID)=> storedID.id !== id)
       setCart(remainingCart)
       removeCart(id)
     }
+
+
     
+   
+  const bottles = use(bottlesPromise)
+
   return (
     <div>
-      Bottles : {bottles.length}
-    <p>Cart {cart.length}</p>
-    <div className='bottles-container-flex'>
-    {cart.map((c)=> <li key={c.id}><img width={70} height={70} src={c.image}></img> <button onClick={()=>handleRemoveCart(c.id)}>X</button></li>)}
-    </div>
-    
-    <div className='bottles-container'>
-    {bottles.map((bottle)=> <Bottle key={bottle.id} bottle={bottle} handleCart={handleCart}/>)}
-    </div>
+      <h2>Add Bottles items to the cart: {bottles.length}</h2>
+
+      <h1>Cart {cart.length}</h1>
+      <div className='bottles-container-flex'>
+      {
+        cart.map((c)=> <li key={c.id}><img src={c.image} width={100} height={100} alt="" /> <button onClick={()=>handleRemove(c.id)}>X</button></li>)
+      }
+      </div>
+     <div className='bottles-container'>
+     {
+      bottles.map((bottle)=> <Bottle key={bottle.id} bottle={bottle} handleCart={handleCart}/>)
+     }
+     </div>
     </div>
   )
 }

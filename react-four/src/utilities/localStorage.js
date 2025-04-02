@@ -32,4 +32,4 @@ const removeFromLocalStorage = (id)=>{ // bottle.id
 }
 
 
-export {getCartFromLocal as getCart,addItemToCartLocal as addCart, removeFromLocalStorage as removeCart}
+export {saveCart,getCartFromLocal as getCart,addItemToCartLocal as addCart, removeFromLocalStorage as removeCart}
