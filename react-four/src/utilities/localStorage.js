@@ -12,7 +12,7 @@ const getCartFromLocal = ()=>{
     return [];
 }
 
-const addItemToCartLocal = (id)=>{
+const addItemToCartLocal = (id)=>{ // bottle.id
     const cart = getCartFromLocal()
     const newCart = [...cart,id];
     saveCart(newCart)
@@ -25,4 +25,11 @@ const saveCart = (cart)=>{
 }
 
 
-export {getCartFromLocal as getCart,addItemToCartLocal as addCart}
+const removeFromLocalStorage = (id)=>{ // bottle.id
+    const storedCart = getCartFromLocal()
+    const remainingCart = storedCart.filter(storedID => storedID !== id)
+    saveCart(remainingCart)
+}
+
+
+export {getCartFromLocal as getCart,addItemToCartLocal as addCart, removeFromLocalStorage as removeCart}
