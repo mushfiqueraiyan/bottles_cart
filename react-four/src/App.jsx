@@ -2,7 +2,8 @@ import React, { Suspense } from 'react'
 import Bottles from './components/bottles/Bottles'
 
 
-const bottlesPromise = fetch('./bottles.json').then((res)=> res.json())
+const bottlesPromise = fetch('./bottles.json')
+                                  .then((res)=> res.json())
 
 const App = () => {
 
